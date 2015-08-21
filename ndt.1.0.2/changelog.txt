@@ -1,0 +1,28 @@
+
+
+Development Changelog
+
+
+
+
+* 1.0.2  (Tue, Jul 9 2013)
+
+  * Fixes 
+    
+    - basic_DS.m: fixed a bug that would cause an error to occur when shuffling the labels from simultaneously recorded data.  
+    
+  * Enhancements
+
+    - plot_standard_results_object.m:  the constructor so can now take a [num_results_to_plot x num_time_bins] matrix 
+      that has all the decoding results precomputed rather than just a cell array with the names of standard results files.  
+      The field plot_obj.errorbar_file_names can now also be a [num_results_to_plot x num_time_bins] matrix of precomputed errorbars     
+    
+    - plot_standard_results_TCT_object.m: the constructor can now take a [num_training_times x num_test_times] matrix with precompiled 
+      decoding results and this object will display a TCT plot with these precompiled results. 
+
+
+
+
+
+
+
