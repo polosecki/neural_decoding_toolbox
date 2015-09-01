@@ -1,0 +1,13 @@
+Analysis completed: 28-Jul-2014 16:56:49
+Monkey: Quincy
+Area: LIP
+Classifier used: libsvm_CL
+Number of reamples: 200
+Aligned on: stimulus-onset
+Time window beginning at -500 with width 2000
+Looking to decode brt from rel_phi_brt labels
+	Train label 1: 270_0 90_0
+	Train label 2: 270_180 90_180
+	Test label 1: 0_0 180_0
+	Test label 2: 0_180 180_180
+33 valid cells in the population

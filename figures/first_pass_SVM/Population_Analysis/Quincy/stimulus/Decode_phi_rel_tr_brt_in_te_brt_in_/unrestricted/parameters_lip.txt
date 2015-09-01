@@ -1,0 +1,11 @@
+Analysis completed: 23-Jul-2014 17:07:59
+Monkey: Quincy
+Area: lip
+Aligned on: stimulus-onset
+Time window beginning at -500 with width 2000
+Looking to decode phi from rel_phi_brt labels
+	Train label 1: 0_0 0_180
+	Train label 2: 180_0 180_180
+	Test label 1: 0_0 0_180
+	Test label 2: 180_0 180_180
+35 valid cells in the population

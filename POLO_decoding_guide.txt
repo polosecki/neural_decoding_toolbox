@@ -1,0 +1,41 @@
+to_save
+save_data_batch: make sure the list of bad files is up_to_date, or even better that it referers to the bad_files script 
+save_neural_data:creates the raster data in decoding toolbox format for a given cell
+
+to_clean:
+save_clean_data_batch: a loop, that calls save_clean_neural_window for each cell
+save_clean_neural_window: given neural data, clears all trials containing nans withing desired window
+
+to_populate:
+prepare_for_populating: loop, calls prepare_cell_labels_for_pop for each cell
+prepare_cell_labels_for_pop: make abolsute labels a copy of relative labels
+permute_cell_labels_func: permute the relative cell labels
+create_population_folder_func: copies individual cells to population
+
+
+to decode:
+params.decode.to_reshuffle: determines if null distribution is calculated?
+How many "features" are used? Number of features to use is set to 25. How to see!
+run_single_decoding_batch might be the place to edit this. See what files call: determine num_valid_sited
+
+
+to special decode:
+the same a to decode
+seems not to work for null distribution yet? (if null decode is set to 1, is_pecial is set to 0)
+
+to null_decode
+
+to plot confusion:
+analyze_confusion_population: calls analyze_resample_confusion or get_confusion_matrix_population and makes the plot
+
+to plot mean:
+mean_decoding: calls get_decoding_results and makes the plot
+
+to compare:
+use_fewer_NULL: option so that the pvalue object computes a null distribution por all time point (currently unused).
+make_comparative_decode_plots
+make_comparative_conf_plots
+
+to_compute_sig:
+compute_significance_across_area: for comparison between areas
+

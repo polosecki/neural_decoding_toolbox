@@ -1,0 +1,13 @@
+Analysis completed: 29-Jul-2014 10:03:47
+Monkey: Quincy
+Area: PITd
+Classifier used: libsvm_CL
+Number of reamples: 200
+Aligned on: saccade-onset
+Time window beginning at -1500 with width 1500
+Looking to decode brt from rel_phi_brt labels
+	Train label 1: 270_0 90_0
+	Train label 2: 270_180 90_180
+	Test label 1: 270_0 90_0
+	Test label 2: 270_180 90_180
+36 valid cells in the population

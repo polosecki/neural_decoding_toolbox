@@ -1,0 +1,22 @@
+Monkey: Quincy
+Area(s): PITd, LIP
+
+Number CV splits: 5
+Number of resamples: 2
+Basic analysis (not generalization analysis)
+
+Time:
+  Bin Width: 30 steps (100 mS)
+  Step Size: 30 steps (100 mS)
+
+Classes:
+  Training:
+	1: Phi = 0
+	2: Phi = 180
+	3: Phi = 270
+	4: Phi = 90
+  Testing:
+	Same as Training		 
+
+Looking for:
+  Similarity of signal amongst class 1 & 2 vs. classes 2, 3, 4 in PITd and LIP

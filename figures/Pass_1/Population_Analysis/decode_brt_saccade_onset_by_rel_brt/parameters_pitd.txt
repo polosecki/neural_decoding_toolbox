@@ -1,0 +1,15 @@
+Analysis completed: 10-Jul-2014 14:13:13
+Monkey: quincy
+Area: pitd
+Aligned on: saccade-onset
+Time window beginning at -1500 with width 1500
+Looking to decode brt from rel_brt labels
+	Train label 1: 0
+	Train label 2: 180
+	Train label 3: 270
+	Train label 4: 90
+	Test label 1: 0
+	Test label 2: 180
+	Test label 3: 270
+	Test label 4: 90
+172 valid cells in the population

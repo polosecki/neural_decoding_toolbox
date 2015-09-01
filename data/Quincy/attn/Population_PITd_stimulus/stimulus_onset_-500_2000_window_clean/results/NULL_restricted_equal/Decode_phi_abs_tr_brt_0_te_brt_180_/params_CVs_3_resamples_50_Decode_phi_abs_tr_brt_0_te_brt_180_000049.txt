@@ -1,0 +1,22 @@
+Analysis completed: 01-Feb-2015 06:49:02
+Monkey: Quincy
+Area: PITd
+Aligned on: stimulus-onset
+Time window beginning at -500 with width 2000
+Looking to decode phi from abs_phi_brt labels
+Was this a "special" decoding? 1
+Was this for a NULL distribution? 1
+Train and test labels:
+	Train label 1: 0_0
+	Train label 2: 180_0
+	Test label 1: 0_180
+	Test label 2: 180_180
+Decoding parameters (generalization analysis):
+	Bin Width: 30
+	Step size: 30
+	Num_CV_splits: 3
+	Num_resample_runs: 50
+84 valid cells in the population
+Restricted to 37 cells
+Classifier used: libsvm_CL
+Sampling with replacement? 1

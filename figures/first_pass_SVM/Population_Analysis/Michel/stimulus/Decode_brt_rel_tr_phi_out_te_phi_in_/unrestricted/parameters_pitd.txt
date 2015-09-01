@@ -1,0 +1,11 @@
+Analysis completed: 24-Jul-2014 22:49:15
+Monkey: Michel
+Area: pitd
+Aligned on: stimulus-onset
+Time window beginning at -500 with width 2000
+Looking to decode brt from rel_phi_brt labels
+	Train label 1: 270_0 90_0
+	Train label 2: 270_180 90_180
+	Test label 1: 0_0 180_0
+	Test label 2: 0_180 180_180
+30 valid cells in the population

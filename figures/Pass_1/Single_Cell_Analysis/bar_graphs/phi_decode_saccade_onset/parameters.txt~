@@ -1,0 +1,22 @@
+Monkey: Quincy
+Area(s): PITd, LIP
+
+Binning:
+  Bin Width: 30 steps (100 mS)
+  Step Size: 30 steps (100 mS)
+
+Time:
+  Aligned on saccade onset
+  Start -1500 mS, window length 1500 mS
+  
+Classes:
+  Training:
+	1: Phi = 0, BRT = 90 & Phi = 0, BRT = 270
+	2: Phi = 180, BRT = 90 & Phi = 180, BRT = 270
+
+  Testing:
+	1: Phi = 0, BRT = 0 & Phi = 0, BRT = 180
+	2: Phi = 180, BRT = 0 & Phi = 180, BRT = 180		 
+
+Looking for:
+  Decoding ability of PITd and LIP w.r.t. PHI position

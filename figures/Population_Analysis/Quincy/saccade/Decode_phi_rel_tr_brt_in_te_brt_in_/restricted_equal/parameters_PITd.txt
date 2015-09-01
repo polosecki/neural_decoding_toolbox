@@ -1,0 +1,13 @@
+Analysis completed: 07-Aug-2014 15:07:56
+Monkey: Quincy
+Area: PITd
+Classifier used: libsvm_CL
+Number of reamples: 200
+Aligned on: saccade-onset
+Time window beginning at -1500 with width 1500
+Looking to decode phi from rel_phi_brt labels
+	Train label 1: 0_0 0_180
+	Train label 2: 180_0 180_180
+	Test label 1: 0_0 0_180
+	Test label 2: 180_0 180_180
+39 valid cells in the population

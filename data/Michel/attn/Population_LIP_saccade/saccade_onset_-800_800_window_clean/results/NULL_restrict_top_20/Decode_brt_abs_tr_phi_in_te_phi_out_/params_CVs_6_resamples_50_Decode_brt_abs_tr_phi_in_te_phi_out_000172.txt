@@ -1,0 +1,22 @@
+Analysis completed: 15-Feb-2015 03:01:38
+Monkey: Michel
+Area: LIP
+Aligned on: saccade-onset
+Time window beginning at -800 with width 800
+Looking to decode brt from abs_phi_brt labels
+Was this a "special" decoding? 0
+Was this for a NULL distribution? 1
+Train and test labels:
+	Train label 1: 0_0 180_0
+	Train label 2: 0_180 180_180
+	Test label 1: 270_0 90_0
+	Test label 2: 270_180 90_180
+Decoding parameters (generalization analysis):
+	Bin Width: 30
+	Step size: 30
+	Num_CV_splits: 6
+	Num_resample_runs: 50
+48 valid cells in the population
+Restricted to 20 cells
+Classifier used: libsvm_CL
+Sampling with replacement? 1
