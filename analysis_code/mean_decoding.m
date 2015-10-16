@@ -7,7 +7,7 @@ function [] = mean_decoding(labels_to_use, is_restricted, is_restricted_by_top, 
 %   Only care about relative coordinates (so label is rel_phi_brt)
 
 clear area refs decode conditions;
-
+save_file=true;
 root_save = fullfile('/Freiwald/ppolosecki', 'lspace', 'plevy', 'figures');
 
 if is_population == 1
@@ -144,12 +144,13 @@ for area_index = 1 : 2
                         mkdir(save_dir);
                     end
 
+                    if save_file
                     saveas(graph, fullfile(save_dir, sprintf('%s_mean_decoding.png', area{area_index})));
                     
                     %Save as SVG
                     addpath('/Freiwald/ppolosecki/lspace/polo_preliminary/attention_analysis/plot2svg');
                     plot2svg(fullfile(save_dir, sprintf('%s_mean_decoding.svg', area{area_index})), graph);
-                    
+                    end
                     close(graph);              
                                
                 end

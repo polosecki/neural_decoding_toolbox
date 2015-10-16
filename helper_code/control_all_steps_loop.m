@@ -8,14 +8,14 @@ to_populate = 0;
 %Slowest part!!
 to_decode = 0; %Independent from special_decode
 to_special_decode = 0; %Independent from decode; decoding with both surface and saccade targets in RF, separated by cognitive condition
-to_null_decode = 1; %Independent from decode, runs special as well
+to_null_decode = 0; %Independent from decode, runs special as well
 
 %To plot confusion matrix analysis
 to_plot_confusion = 0;
 to_plot_special_confusion = 0; %above must be 1 for this to run
 
 %To plot mean decodings
-to_plot_mean = 0;
+to_plot_mean = 1;
 to_plot_mean_special = 0; %above must be 1 for this to run
 
 %To plot LIP vs. PITd comparisons for confusion matrices AND mean decodings
@@ -351,7 +351,7 @@ params.decode.decode_params.num_resample_runs = 200;
 params.decode.decode_params.test_only_at_train_times = 0;
 
 params.decode.decode_params.restrict_features = 1;
-params.decode.decode_params.restrict_to_top = 0;
+params.decode.decode_params.restrict_to_top = 1;
 params.decode.decode_params.num_features_to_use = 20;
 
 params.decode.decode_params.to_reshuffle = 0;
@@ -785,7 +785,7 @@ is_pop = 1;
 
 %Only relevant for population
 is_restricted = 1;
-is_restricted_by_top = 0; %only relevant if is_restricted is 1
+is_restricted_by_top = 1; %(should be set to 1, it DOES NOT restrict to top)only relevant if is_restricted is 1
 num_top_cells = 20; %only relevant if both of the above are 1
 
 %***Loop controls (OK to edit)***
@@ -1200,20 +1200,20 @@ end
 
 if to_plot_mean == 1
 
-%    monkey = 'Quincy';
-     monkey = 'Michel';
-    
+    monkey = 'Quincy';
+%     monkey = 'Michel';
+%     monkey= 'both_monkeys';
     is_pop = 1;
 
     is_restricted = 1;
-    is_restricted_by_top = 0;
+    is_restricted_by_top = 1;
     num_top_cells = 20;
 
     %1 is for relative coordinates, 2 is for absolute coordinates
     rel_start = 1;
-    rel_end = 2;
+    rel_end = 1;
     
-
+    
     for rel_index = rel_start : rel_end
         
         if rel_index == 1
@@ -1221,10 +1221,20 @@ if to_plot_mean == 1
         else
             labels_to_use = 'abs_phi_brt';
         end
-            
-        %Only works for 'rel_phi_brt' or 'abs_phi_brt' conditions and alignment on 'onset'
-        mean_decoding(labels_to_use, is_restricted, is_restricted_by_top, num_top_cells, is_pop, monkey, to_plot_mean_special);
+        clear p_val_params
+        p_val_params.use_p_vals=1; %1:Enable display of significance in comparative plots
+        p_val_params.null_resamples=50; %Resamples in the null decodings
+        p_val_params.p_threshold=0.05;
+        p_val_params.mult_compare_method='bonferroni';
+        if ~to_plot_mean_special
+            p_val_params.null_CVs=6; %Cross-validation splits in the null decodings
+        else
+            p_val_params.null_CVs=3;
+        end
         
+        %Only works for 'rel_phi_brt' or 'abs_phi_brt' conditions and alignment on 'onset'
+        %    mean_decoding(labels_to_use, is_restricted, is_restricted_by_top, num_top_cells, is_pop, monkey, to_plot_mean_special);
+        mean_decoding_all_together(labels_to_use, is_restricted, is_restricted_by_top, num_top_cells, is_pop, monkey, to_plot_mean_special,p_val_params);
     end
 end
 
@@ -1244,7 +1254,7 @@ if to_compare == 1
     num_top_cells = 20;
 
     with_resamples = 1;
-
+clear p_val_params
     p_val_params.use_p_vals=1; %1:Enable display of significance in comparative plots
     p_val_params.null_resamples=50; %Resamples in the null decodings
     p_val_params.p_threshold=0.05;

@@ -43,7 +43,7 @@ for area_index = 1 : 2
         num_time_bins = size(time_vector, 2);
         
         mean_results = decode_results.DECODING_RESULTS.ZERO_ONE_LOSS_RESULTS.mean_decoding_results;
-        
+        keyboard
         if size(mean_results, 1) == size(mean_results, 2) %then this is square matrix, with cross-time train/test
             means(area_index, :) = diag(mean_results);
         else %assume just test and train at same times, so already 1-D
@@ -76,7 +76,6 @@ for area_index = 1 : 2
         
             [decode_results, decode_params] = get_decoding_results(monkey, area{area_index}, ref, align, cell_no, time_start, time_window, time_type, labels_to_use, ...
                                         decode_on, train_in, test_in, is_restricted, is_restricted_by_top, top_k_cells, is_population, is_special);
-
             if isempty(decode_results) || isempty(decode_params) || isempty(decode_results.DECODING_RESULTS)
 %                 separate_means(area_index, index_to_add, :) = [];
                 continue;
